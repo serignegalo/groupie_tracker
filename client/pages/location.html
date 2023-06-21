@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/artistDetails.css">
+    <title>Groupie-Tracker</title>
+</head>
+<body>
+  <header>
+    <div class="homeButton"><a href="http://localhost:8080"><p>Home</p></a></div>
+    <div class="wrapperHeader">
+      <h1 class="title">Groupie Tracker</h1>
+    </div>
+  </header>
+
+      <main>
+        
+        <div  class="locations">
+            <div class="listLocations">
+                <ol>
+                            {{range .}}
+                            <br>
+                            <li>
+                               <ul>
+                                {{range .Locations}}
+                                   <li> {{.}}  </li> 
+                                {{end}}
+                               </ul>
+                            </li>
+                            {{end}}
+                        </ol>
+            </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="firstPartFooter">
+            <h4>
+              Copyright by Moustapha FALL, fmamdou et
+              Galo Diokhane, gdiokhan
+            </h4>
+          </div>
+          <div class="secondPartFooter"></div>
+      </footer>
+</body>
+</html>
