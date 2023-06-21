@@ -4,45 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/artists.css">
+    <link rel="stylesheet" href="../css/artists.css" />
     <title>Groupie-Tracker</title>
   </head>
   <body>
-
     <header>
-      <div class="homeButton"><a href="http://localhost:8080"><p>Home</p></a></div>
+      <div class="homeButton">
+        <a href="/"><p>Home</p></a>
+      </div>
       <div class="wrapperHeader">
         <h1 class="title">Groupie Tracker</h1>
       </div>
     </header>
 
-        <!--Boucle permetant de parcurir le tableau des artistes-->
-        
-        <div class="mainWrapper">
-        {{range .}}
-            <div class="card">
-                <a href="http://localhost:8080/artistDetails?id={{.Id}}">
-                <img class="imgCard" src="{{.Image}}" alt="imgArtist" />
-                <div class="wrapperText">
-                  <h2 class="nameArtist infosCard">Name: {{.Name}}</h2>
-                  <h2 class="baArtist infosCard">Beguin Activity: {{.CreationDate}}</h2>
-                  <h2 class="faArtistt infosCard">First Album: {{.FirstAlbum}}</h2>
-                </div>
-                </a>
-            </div>
-            <!--Fin de Boucle permetant de parcurir le tableau des artistes-->
-            {{end}}
+    <!--Boucle permetant de parcurir le tableau des artistes-->
+
+    <div class="mainWrapper">
+      {{range .}}
+      <div class="card">
+        <a href="/artistDetails?id={{.Id}}">
+          <img class="imgCard" src="{{.Image}}" alt="imgArtist" />
+          <div class="wrapperText">
+            <h2 class="nameArtist infosCard">Name: {{.Name}}</h2>
+            <h2 class="baArtist infosCard">
+              Beguin Activity: {{.CreationDate}}
+            </h2>
+            <h2 class="faArtistt infosCard">First Album: {{.FirstAlbum}}</h2>
           </div>
+        </a>
+      </div>
+      <!--Fin de Boucle permetant de parcurir le tableau des artistes-->
+      {{end}}
+    </div>
   </body>
 
   <footer>
     <div class="firstPartFooter">
-      <h4>
-        Copyright by Moustapha FALL, fmamdou et
-        Galo Diokhane, gdiokhan
-      </h4>
+      <h4>Copyright by Moustapha FALL, fmamdou et Galo Diokhane, gdiokhan</h4>
     </div>
     <div class="secondPartFooter"></div>
   </footer>
-
 </html>

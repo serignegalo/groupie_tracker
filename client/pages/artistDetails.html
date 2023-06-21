@@ -1,90 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/artistDetails.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/artistDetails.css" />
     <title>Groupie-Tracker</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="homeButton"><a href="http://localhost:8080"><p>Home</p></a></div>
-        <div class="wrapperHeader">
-          <h1 class="title">Groupie Tracker</h1>
-        </div>
-      </header>
+      <div class="homeButton">
+        <a href="/"><p>Home</p></a>
+      </div>
+      <div class="wrapperHeader">
+        <h1 class="title">Groupie Tracker</h1>
+      </div>
+    </header>
 
-      <main>
-        <div class="infos">
-            <div class="imageInfos"><img src="{{.Image}}" alt="image"Artist></div>
-            <div class="detailsInfos">
-                <h2 class="nameArtist infosCard">Name: {{.Name}}</h2>
-                <h2 class="baArtist infosCard">Beguin Activity: {{.CreationDate}}</h2>
-                <h2 class="faArtistt infosCard">First Album: {{.FirstAlbum}}</h2>
-            </div>
+    <main>
+      <div class="infos">
+        <div class="imageInfos">
+          <img src="{{.Image}}" alt="image" Artist />
         </div>
-        <div class="wrapper">
-            <div class="members">
-                <table>
-                    <tr>
-                        <th>MEMBERS</th>
-                    </tr>
-                    {{range .Members}}
-                        <tr>
-                            <td>{{.}}</td>
-                        <tr>
-                    {{end}}
-                </table>
-    
-            </div>
-            <div  class="concerts">
-                <div class="listConcerts">
-                    <table>
-                        <tr>
-                            <th>CONCERTS</th>
-                        </tr>
-                        {{range .Loca}}
-                        <tr>
-                            <td>{{.}}</td>
-                        <tr>
-                    {{end}}
-                    </table>
-                </div>
-            </div>
-          
-            <div  class="locations">
-                <div class="listLocations">
-                    <table>
-                        <tr>
-                            <th colspan="2">LOCATIONS</th>
-                        </tr>
-                        {{range $location, $dates := .RelationsConcertDates}}
-                                <tr>
-                                    <td>{{$location}}</td>
-                                    <td>
-                                        {{range $dates}}
-                                            {{.}} <br>
-                                        {{end}}
-                                    </td>
-                                </tr>
-    
-                                {{end}}
-                    </table>
-                </div>
-            </div>
-
+        <div class="detailsInfos">
+          <h2 class="nameArtist infosCard">Name: {{.Name}}</h2>
+          <h2 class="baArtist infosCard">Beguin Activity: {{.CreationDate}}</h2>
+          <h2 class="faArtistt infosCard">First Album: {{.FirstAlbum}}</h2>
         </div>
-      </main>
+      </div>
+      <div class="wrapper">
+        <div class="members">
+          <table>
+            <tr>
+              <th>MEMBERS</th>
+            </tr>
+            {{range .Members}}
+            <tr>
+              <td>{{.}}</td>
+            </tr>
 
-      <footer>
-        <div class="firstPartFooter">
-            <h4>
-              Copyright by Moustapha FALL, fmamdou et
-              Galo Diokhane, gdiokhan
-            </h4>
+            <tr>
+              {{end}}
+            </tr>
+          </table>
+        </div>
+        <div class="concerts">
+          <div class="listConcerts">
+            <table>
+              <tr>
+                <th>CONCERTS</th>
+              </tr>
+              {{range .Loca}}
+              <tr>
+                <td>{{.}}</td>
+              </tr>
+
+              <tr>
+                {{end}}
+              </tr>
+            </table>
           </div>
-          <div class="secondPartFooter"></div>
-      </footer>
-</body>
+        </div>
+
+        <div class="locations">
+          <div class="listLocations">
+            <table>
+              <tr>
+                <th colspan="2">LOCATIONS</th>
+              </tr>
+              {{range $location, $dates := .RelationsConcertDates}}
+              <tr>
+                <td>{{$location}}</td>
+                <td>
+                  {{range $dates}} {{.}} <br />
+                  {{end}}
+                </td>
+              </tr>
+
+              {{end}}
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="firstPartFooter">
+        <h4>Copyright by Moustapha FALL, fmamdou et Galo Diokhane, gdiokhan</h4>
+      </div>
+      <div class="secondPartFooter"></div>
+    </footer>
+  </body>
 </html>
